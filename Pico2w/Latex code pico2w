@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\begin{document}
+\pagestyle{empty}
+
+
+\hspace{-8em}{\includegraphics[width=5cm, height=2cm]{comet.jpg}}
+\vspace{-7em} 
+
+\begin{flushright}
+\textbf{
+Name: B SHAMALA DEVI \\
+Batch: COMETFWC030 \\
+Date: 30-june-2025
+}
+\end{flushright}
+\\ \section*{Q.11 Match the logic gates in Column A with their equivalents in Column B}
+\begin{center}
+
+\textbf{Column A} & & \textbf{Column B} \\
+
+\includegraphics[width=0.5\linewidth]{gates.jpg}
+\begin{figure}
+    
+    \caption{Enter Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+\end{center}
+\noindent
+(A) P-2, Q-4, R-1, S-3        \hspace{10em}(B) P-4, Q-2, R-1, S-3 
+\\(C) P-2, Q-4, R-3, S-1       \hspace{10em}(D) P-4, Q-2, R-3, S-1
+
+
+\section*{Q11. Match the logic gates in Column A with Column B}
+
+\noindent\textbf{Column A:}
+\begin{itemize}
+  \item P – OR gate: outputs 1 if any input is 1.
+  \item Q – AND gate: outputs 1 only if both inputs are 1.
+  \item R – NOR gate: outputs 1 only if both inputs are 0 (NOT of OR).
+  \item S – XOR gate: outputs 1 if inputs are different.
+\end{itemize}
+
+\noindent\textbf{Column B:}
+\begin{itemize}
+  \item[1.] NOR gate – OR gate followed by a NOT.
+  \item[2.] AND gate – basic multiplication logic.
+  \item[3.] XOR gate – exclusive OR: outputs 1 if inputs differ.
+  \item[4.] OR gate – outputs 1 if any input is 1.
+\end{itemize}
+
+\vspace{1em}
+
+\noindent\textbf{Explanation:}
+\begin{itemize}[leftmargin=2em]
+  \item P is an OR gate → matches with 4.
+  \item Q is an AND gate → matches with 2.
+  \item R is a NOR gate → matches with 1.
+  \item S is an XOR gate → matches with 3.
+\end{itemize}
+ \\ \vspace{-00.8em}\textbf{Correct Matching:} \quad P-4, Q-2, R-1, S-3
+\vspace{0.5em}
+\noindent\textbf{Answer: (B)}
+
+\end{document}
