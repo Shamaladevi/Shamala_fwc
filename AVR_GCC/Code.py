@@ -1,30 +1,30 @@
- from machine import Pin
+from machine import Pin
 import time
 
-# Define input pins (buttons)
+# Input buttons
 A = Pin(2, Pin.IN, Pin.PULL_DOWN)
 B = Pin(3, Pin.IN, Pin.PULL_DOWN)
 C = Pin(4, Pin.IN, Pin.PULL_DOWN)
+D = Pin(5, Pin.IN, Pin.PULL_DOWN)
 
-# Define output pin (LED for F)
+# Output LED
 F = Pin(15, Pin.OUT)
 
+# MUX logic function
+def mux_logic(a, b, c, d):
+    I = [c, d, int(not c), c & d]
+    sel = (a << 1) | b
+    return I[sel]
+
+# Main loop
 while True:
-    # Read inputs
     a = A.value()
     b = B.value()
     c = C.value()
+    d = D.value()
     
-    # Logic implementation:
-    g1 = a and b             # AND gate
-    g2 = b or c              # OR gate
-    g3 = not g2              # NOT gate
-    f = g1 or g3             # Final OR gate
+    out = mux_logic(a, b, c, d)
+    F.value(out)
 
-    # Output to LED
-    F.value(int(f))
-    
-    # Optional: debug print
-    print(f"A={a} B={b} C={c} => F={int(f)}")
-    
+    print(f"A={a} B={b} C={c} D={d} -> F={out}")
     time.sleep(0.1)
