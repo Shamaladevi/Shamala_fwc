@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{margin=1in}
+\begin{document}
+
+\noindent \textbf{Q.39} \quad The Boolean function realized by the logic circuit shown is
+
+\vspace{1em} % Adds space between text and figure
+
+% Figure section
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1.0\linewidth]{mux.png} % Replace with your actual image file
+    \label{fig:mux-circuit}
+\end{figure}
+
+\noindent
+\begin{tabular}{ll}
+\textbf{(A)} $F = \Sigma m(0,\ 1,\ 3,\ 5,\ 9,\ 10,\ 14)$ &
+\vspace{2em} \hspace{7em}\textbf{(B)} $F = \Sigma m(2,\ 3,\ 5,\ 7,\ 8,\ 12,\ 13)$ \\
+\textbf{(C)} $F = \Sigma m(1,\ 2,\ 4,\ 5,\ 11,\ 14,\ 15)$ &
+\hspace{7em}\textbf{(D)} $F = \Sigma m(2,\ 3,\ 5,\ 7,\ 8,\ 9,\ 12)$ \\
+\end{tabular}
+
+\vspace{2em}\noindent \textbf{Explanation:}
+
+\begin{itemize}
+    \item A 4x1 MUX has 2 select lines. Here, \( S_1 = A \), \( S_0 = B \), so the MUX selects based on the values of \( AB \).
+    \item The inputs are:
+    \[
+    \begin{aligned}
+        I_0 &= C \\
+        I_1 &= D \\
+        I_2 &= \overline{C} \\
+        I_3 &= C \cdot D \\
+    \end{aligned}
+    \]
+    \item Let’s compute the output \( F(A, B, C, D) \) for all combinations of \( A \) and \( B \), and based on the corresponding \( I_i \).
+
+\[
+\begin{array}{|c|c|c|c|c|}
+\hline
+A & B & S_1S_0 & \text{Selected Input} & F(A,B,C,D) \\
+\hline
+0 & 0 & 00 & I_0 = C & C \\
+0 & 1 & 01 & I_1 = D & D \\
+1 & 0 & 10 & I_2 = \overline{C} & \overline{C} \\
+1 & 1 & 11 & I_3 = C \cdot D & CD \\
+\hline
+\end{array}
+\]
+
+\item Now write the full function by substituting all 4-bit combinations \( ABCD \), and check when output is 1:
+
+E.g., for \( A=0, B=0 \Rightarrow I_0 = C \), so output = C (depends on C).
+If \( C=1 \Rightarrow F=1 \), otherwise 0. Do this for all 16 combinations.
+
+\item The final function gives minterms:
+\[
+F = \Sigma m(2,\ 3,\ 5,\ 7,\ 8,\ 12,\ 13)
+\]
+
+\item So the correct option is \textbf{(B)}.
+\end{itemize}
+\end{document}
